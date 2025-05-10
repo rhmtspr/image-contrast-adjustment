@@ -4,37 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Contrast Adjustment</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
   </head>
-  <body class="flex flex-col items-center p-8">
-    <h1 class="text-3xl font-bold mb-6">Image Contrast Adjustment</h1>
-    <input
-      type="file"
-      id="imageInput"
-      class="mb-4 border p-2 rounded-lg"
-      accept="image/*"
-    />
-    <canvas id="imageCanvas" class="hidden"></canvas>
-    <img id="imagePreview" class="hidden shadow-lg" alt="Your Image" />
-    <label for="contrastSlider" class="mt-4 font-semibold"
-      >Adjust Contrast (<span id="contrastValue">0</span>)</label
-    >
-    <input
-      type="range"
-      id="contrastSlider"
-      class="slider"
-      min="-100"
-      max="100"
-      value="0"
-    />
-    <div class="controls">
-      <button id="resetButton" class="button">Reset</button>
-      <button id="downloadButton" class="button">Download</button>
+
+  <body class="bg-purple-600 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-3xl w-[420px] shadow-3xl ">
+  
+      <div class="flex justify-center -mt20">
+        <img
+          id="imagePreview"
+          src=""
+          alt="Preview"
+          class="w-100 h-100 object-cover shadow-lg border-4 border-white hidden"
+        />
+      </div>
+
+      <div class="p-6 text-center">
+        <h1 class="text-3xl font-bold text-gray-800">Image Contrast Adjustment</h1>
+
+        <div class="mt-4 w-full">
+
+          <label for="imageInput" class="flex items-center justify-center w-full px-4 py-3 bg-purple-600 text-white rounded-xl cursor-pointer shadow-md hover:bg-purple-700 transition "> Upload Gambar </label>
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            class="hidden"
+          />
+          
+        </div>        
+
+        <div class="mt-4">
+          <label class="text-sm text-gray-700 font-medium"
+            >Contrast: <span id="contrastValue">0</span></label
+          >
+          <input
+            type="range"
+            id="contrastSlider"
+            min="-100"
+            max="100"
+            value="0"
+            class="w-full mt-2"
+          />
+        </div>
+
+        <div class="mt-6 flex justify-between space-x-4">
+          <button id="resetButton" class="flex-1 bg-purple-100 text-purple-700 font-semibold py-2 rounded-xl shadow"> Reset </button>
+          <button id="downloadButton" class="flex-1 bg-purple-600 text-white font-semibold py-2 rounded-xl shadow"> Download </button>
+        </div>
+      </div>
     </div>
+
+    <canvas id="imageCanvas" class="hidden"></canvas>
+
     <script src="script.js"></script>
   </body>
 </html>
