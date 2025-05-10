@@ -1,0 +1,28 @@
+body {
+  background-color: #f9fafb;
+}
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+.slider {
+  width: 100%;
+  margin-top: 10px;
+}
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #1e40af;
+}

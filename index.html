@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Contrast Adjustment</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="flex flex-col items-center p-8">
+    <h1 class="text-3xl font-bold mb-6">Image Contrast Adjustment</h1>
+    <input
+      type="file"
+      id="imageInput"
+      class="mb-4 border p-2 rounded-lg"
+      accept="image/*"
+    />
+    <canvas id="imageCanvas" class="hidden"></canvas>
+    <img id="imagePreview" class="hidden shadow-lg" alt="Your Image" />
+    <label for="contrastSlider" class="mt-4 font-semibold"
+      >Adjust Contrast (<span id="contrastValue">0</span>)</label
+    >
+    <input
+      type="range"
+      id="contrastSlider"
+      class="slider"
+      min="-100"
+      max="100"
+      value="0"
+    />
+    <div class="controls">
+      <button id="resetButton" class="button">Reset</button>
+      <button id="downloadButton" class="button">Download</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
